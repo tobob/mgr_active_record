@@ -14,7 +14,7 @@
   <% @post.comments.each do |comment| %>
    Content:
    <%= comment.content %>
-   <%= link_to 'Delete Comment', comment, method: :delete %>
+   <%= link_to 'Delete Comment', {action: 'destroy', controller: 'comments', id: comment.id}, method: :delete %>
    <br/>
   <% end %>
 <% else %>
