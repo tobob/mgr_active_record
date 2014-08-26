@@ -7,7 +7,7 @@
 #
 # See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
 # documentation.
-
+listen 8080
 # Use at least one worker per core if you're on a dedicated server,
 # more will usually help for _short_ waits on databases/caches.
 worker_processes 4
@@ -21,7 +21,7 @@ worker_processes 4
 
 # Help ensure your application will always spawn in the symlinked
 # "current" directory that Capistrano sets up.
-working_directory "/home/bob/mgr_Wojciech_Bozek/mgr_active_record" # available in 0.94.0+
+working_directory "/home/bob/mgr_active_record" # available in 0.94.0+
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
@@ -30,13 +30,13 @@ working_directory "/home/bob/mgr_Wojciech_Bozek/mgr_active_record" # available i
 timeout 30
 
 # feel free to point this anywhere accessible on the filesystem
-pid "/home/bob/mgr_Wojciech_Bozek/mgr_active_record/pids/unicorn.pid"
+pid "/home/bob/mgr_active_record/pids/unicorn.pid"
 
 # By default, the Unicorn logger will write to stderr.
 # Additionally, ome applications/frameworks log to stderr or stdout,
 # so prevent them from going to /dev/null when daemonized here:
-stderr_path "/home/bob/mgr_Wojciech_Bozek/mgr_active_record/log/unicorn.stderr.log"
-stdout_path "/home/bob/mgr_Wojciech_Bozek/mgr_active_record/log/unicorn.stdout.log"
+stderr_path "/home/bob/mgr_active_record/log/unicorn.stderr.log"
+stdout_path "/home/bob/mgr_active_record/log/unicorn.stdout.log"
 
 listen '/tmp/unicorn.mgr_active_record.sock'
 
